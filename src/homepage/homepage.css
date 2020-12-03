@@ -1,0 +1,40 @@
+.container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.btnbox {
+  display: flex;
+  justify-content: center;
+}
+
+.btn {
+  width: 80px;
+  color: #fff;
+  margin: 10px;
+}
+
+h3 {
+  text-align: center;
+}
+
+input {
+  width: 200px;
+  margin: 0 auto;
+}
+
+.itemInput {
+  margin: 5px auto;
+  display: flex;
+  width: 400px;
+}
+
+.itemInput>span {
+  flex: 1;
+}
+
+.itemInput>input {
+  flex: 5;
+}
+
