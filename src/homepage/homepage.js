@@ -66,6 +66,7 @@ class homepage extends React.Component {
         <h3>计数器： {this.state.count}</h3>
         <h3>用户名： {this.state.usename}</h3>
         <h3>密码： {this.state.password}</h3>
+        <h3>修改内容</h3>
 
 
 
