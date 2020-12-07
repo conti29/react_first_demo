@@ -1,6 +1,9 @@
 import React from 'react'
+import First from './first'
+import Second from './second'
 import { Button } from 'antd';
 import './homepage.css'
+const { Provider } = React.createContext()
 
 
 
@@ -15,6 +18,8 @@ class homepage extends React.Component {
     usename: '',
     password: '',
     txtRefValue: '', // 非受控
+    childToFather: '', // 子组件传给父组件的数据
+    toBrother: '', // 兄弟之间传参
   }
   // 数量++
   onIncrement = () => {
@@ -38,13 +43,34 @@ class homepage extends React.Component {
     }
   }
 
+  // 父组件的回调,用于子组件调用
+  getChildMsg = (msg)=> {
+    this.setState({
+      childToFather: msg
+    })
+  }
+
+    // 兄弟组件
+    getBrotherMsg = (msg)=> {
+      this.setState({
+        toBrother: msg
+      })
+    }
+
   render() {
     return (
-      <div className="container">
+      <Provider value={this.state.count}>
+        <div className="container">
         <div className="btnbox">
           <Button className="btn" onClick={() => this.onIncrement()} type="primary">+ count</Button>
           <Button className="btn" onClick={() => this.enIncrement()} type="primary">- count</Button>
         </div>
+        {/* 第一个组件 */}
+        <First count={this.state.count} getChild={this.getChildMsg} getBrother={this.getBrotherMsg} />
+        {/* 第二个组件 */}
+        <Second toBrother={this.state.toBrother}/>
+        <p>子传父的数据: {this.state.childToFather}</p>toBrother
+
         <div className="itemInput">
           <span>计数器：</span><input type="text" name="count" value={this.state.count} onChange={e => this.setState({ count: e.target.value })}></input>
         </div>
@@ -71,6 +97,7 @@ class homepage extends React.Component {
 
 
       </div>
+      </Provider>
     )
   }
 }
