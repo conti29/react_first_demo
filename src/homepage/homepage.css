@@ -1,9 +1,9 @@
 .container {
-  display: flex;
+  /* display: flex;
   justify-content: center;
-  flex-direction: column;
+  flex-direction: column; */
 }
-
+/* 
 .btnbox {
   display: flex;
   justify-content: center;
@@ -36,5 +36,5 @@ input {
 
 .itemInput>input {
   flex: 5;
-}
+} */
 

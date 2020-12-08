@@ -1,9 +1,10 @@
 import React from 'react'
 import First from './first'
 import Second from './second'
-import { Button } from 'antd';
+import { Button } from 'antd'
+
 import './homepage.css'
-const { Provider } = React.createContext()
+export const { Provider, Consumer } = React.createContext();
 
 
 
@@ -61,15 +62,15 @@ class homepage extends React.Component {
     return (
       <Provider value={this.state.count}>
         <div className="container">
-        <div className="btnbox">
+        {/* <div className="btnbox">
           <Button className="btn" onClick={() => this.onIncrement()} type="primary">+ count</Button>
           <Button className="btn" onClick={() => this.enIncrement()} type="primary">- count</Button>
-        </div>
+        </div> */}
         {/* 第一个组件 */}
         <First count={this.state.count} getChild={this.getChildMsg} getBrother={this.getBrotherMsg} />
         {/* 第二个组件 */}
         <Second toBrother={this.state.toBrother}/>
-        <p>子传父的数据: {this.state.childToFather}</p>toBrother
+        {/* <p>子传父的数据: {this.state.childToFather}</p>toBrother
 
         <div className="itemInput">
           <span>计数器：</span><input type="text" name="count" value={this.state.count} onChange={e => this.setState({ count: e.target.value })}></input>
@@ -79,9 +80,9 @@ class homepage extends React.Component {
         </div>
         <div className="itemInput">
           <span>密码：</span><input type="text" name="password" value={this.state.password} onChange={this.handleFrom}></input>
-        </div>
+        </div> */}
         {/* 非受控组件 */}
-        <div className="itemInput">
+        {/* <div className="itemInput">
           <span>非受控组件</span><input type="text" ref={this.txtRef}></input><span>{this.state.txtRefValue}</span>
         </div>
 
@@ -91,8 +92,7 @@ class homepage extends React.Component {
 
         <h3>计数器： {this.state.count}</h3>
         <h3>用户名： {this.state.usename}</h3>
-        <h3>密码： {this.state.password}</h3>
-        <h3>修改001内容</h3>
+        <h3>密码： {this.state.password}</h3> */}
 
 
 
@@ -101,6 +101,13 @@ class homepage extends React.Component {
     )
   }
 }
+
+// homepage.PropTypes = {
+//   colors: PropTypes.array,
+
+//   gender: PropTypes.oneOf(['male', 'female']).isRequired
+// }
+
 
 
 export default homepage 
