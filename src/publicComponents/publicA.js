@@ -16,6 +16,7 @@ class publicA extends React.Component {
       <div className="publicA">
         <p>我是publicA: {this.props.name}</p>
         <p>我是publicA: {this.props.list}</p>
+        <p>我是高阶组件: {this.props.x}----{this.props.y}</p>
       </div>
     )
   }

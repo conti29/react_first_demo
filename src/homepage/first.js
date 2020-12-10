@@ -1,6 +1,7 @@
 import React from 'react'
 import './first.css'
 import PublicA from '../publicComponents/publicA'
+import Mouse from '../publicComponents/mouse'
 // import { Consumer } from './homepage' // 需要从定义的父组件引入才能拿到值
 
 class first extends React.Component {
@@ -29,6 +30,9 @@ class first extends React.Component {
         <button onClick={this.handle}>点我,子传父</button>
         <button onClick={this.handleBrother}>点我,传兄弟</button> */}
         <div>first组件===公共组件PublicA: <PublicA name={'first'} /></div>
+        <Mouse>
+          {(mouse)=> <p>鼠标当前位置 {mouse.x}，{mouse.y}</p>} 
+        </Mouse>
       </div>
       
     )
